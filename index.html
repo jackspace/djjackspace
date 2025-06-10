@@ -1,1 +1,164 @@
-hello world!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jackspace - Beats that Move Bodies and Spirits" />
+  <title>Jackspace DJ</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --fg: #fff;
+      --accent: #fcd700;
+      --muted: #aaa;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: #000;
+    }
+
+    header img {
+      max-width: 200px;
+      width: 60%;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      margin: 0.5rem 0;
+      color: var(--accent);
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: #111;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--fg);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    iframe {
+      width: 100%;
+      height: 180px;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 1rem;
+      color: var(--muted);
+      border-top: 1px solid #222;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .media-grid iframe {
+      height: 200px;
+    }
+
+    @media (min-width: 768px) {
+      iframe {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="jackspace_DJ_logo.png" alt="Jackspace Logo" />
+    <h1>Jackspace</h1>
+    <p class="tagline">Beats that Move Bodies and Spirits</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#mixes">Mixes</a>
+    <a href="#calendar">Gigs</a>
+    <a href="#media">Media</a>
+    <a href="#connect">Connect</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="mixes">
+    <h2>Mixcloud</h2>
+    <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2FjackspaceSF%2F" allow="autoplay"></iframe>
+  </section>
+
+  <section id="calendar">
+    <h2>Upcoming Gigs</h2>
+    <!-- Embed Google Calendar or use a simple list -->
+    <p>Coming soon...</p>
+  </section>
+
+  <section id="about">
+    <h2>About Jackspace</h2>
+    <p>Jackspace blends organic tribal rhythms, earthy basslines, and futuristic textures into sonic journeys that move both body and spirit. Rooted in the ecstatic dance and ancestral energy of Mexico, every set is an invitation to feel, flow, and transform.</p>
+  </section>
+
+  <section id="media">
+    <h2>Videos & Photos</h2>
+    <div class="media-grid">
+      <!-- Example YouTube Embeds -->
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video"></iframe>
+      <!-- Add SmugMug link if preferred for photos -->
+    </div>
+  </section>
+
+  <section id="connect">
+    <h2>Stay in the Loop</h2>
+    <p>Follow Jackspace for new mixes, event announcements, and tribal transmissions:</p>
+    <ul>
+      <li><a href="https://mixcloud.com/jackspaceSF" target="_blank">Mixcloud</a></li>
+      <li><a href="https://facebook.com/dj.jackspace" target="_blank">Facebook</a></li>
+      <li><a href="https://instagram.com/djjackspace" target="_blank">Instagram</a></li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:jackspace@gmail.com">jackspace@gmail.com</a></p>
+    <p>WhatsApp (MX): <a href="tel:+521XXXXXXXXXX">+52 1 XXX XXX XXXX</a></p>
+    <p>WhatsApp (US): <a href="tel:+1XXXXXXXXXX">+1 XXX XXX XXXX</a></p>
+  </section
+
+  <footer>
+    <p>"Tribal Pulse. Galactic Bass." &copy; Jackspace 2025</p>
+  </footer>
+</body>
+</html>
