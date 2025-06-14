@@ -9,99 +9,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0f0f0f;
-      --fg: #fff;
-      --accent: #fcd700;
-      --muted: #aaa;
-      font-family: 'Roboto', sans-serif;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--fg);
-    }
-
-    header {
-      text-align: center;
-      padding: 2rem;
-      background: #000;
-    }
-
-    header img {
-      max-width: 200px;
-      width: 60%;
-    }
-
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2rem;
-      margin: 0.5rem 0;
-      color: var(--accent);
-    }
-
-    .tagline {
-      font-size: 1.2rem;
-      color: var(--muted);
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      padding: 1rem;
-      background: #111;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: var(--fg);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 2rem;
-      max-width: 960px;
-      margin: auto;
-    }
-
-    iframe {
-      width: 100%;
-      height: 180px;
-      border: none;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      padding: 1rem;
-      color: var(--muted);
-      border-top: 1px solid #222;
-    }
-
-    .media-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-    }
-
-    .media-grid iframe {
-      height: 200px;
-    }
-
-    @media (min-width: 768px) {
-      iframe {
-        height: 300px;
-      }
-    }
-  </style>
 </head>
-<body>
+<body style="background: url('images/backgrounds/lake-chapala-loop.mp4') no-repeat center center fixed; background-size: cover;">
   <header>
-    <img src="images/jackspace_DJ_logo.png" alt="Jackspace Logo" />
+    <picture>
+      <source srcset="images/jackspace_DJ_logo.webp" type="image/webp">
+      <source srcset="images/jackspace_DJ_logo.png" type="image/png">
+      <img src="images/jackspace_DJ_logo.png" alt="Jackspace Logo" width="200" height="200" loading="lazy" />
+    </picture>
     <h1>Jackspace</h1>
     <p class="tagline">Beats that Move Bodies and Spirits</p>
   </header>
@@ -113,17 +28,20 @@
     <a href="#media">Media</a>
     <a href="#connect">Connect</a>
     <a href="#contact">Contact</a>
-  </nav>    
+  </nav>
 
   <section id="mixes">
     <h2>Mixcloud</h2>
-    <iframe width="100%" height="120" src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&light=1&autoplay=1&feed=%2FjackspaceSF%2F" frameborder="0" allow="encrypted-media; fullscreen; autoplay; idle-detection; speaker-selection; web-share;" ></iframe>
+    <iframe width="100%" height="120" src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&light=1&autoplay=1&feed=%2FjackspaceSF%2F" frameborder="0" allow="encrypted-media; fullscreen; autoplay; idle-detection; speaker-selection; web-share;"></iframe>
   </section>
 
   <section id="calendar">
     <h2>Upcoming Gigs</h2>
-    <!-- Embed Google Calendar or use a simple list -->
-    <p>Coming soon...</p>
+    <ul>
+      <li><strong>June 11, 2025 – 8PM to 11PM</strong> at <em>El Bar Camaleón</em>, Ajijic<br />
+        Part of the <strong>XYZ Connect Community</strong>
+      </li>
+    </ul>
   </section>
 
   <section id="about">
@@ -144,11 +62,12 @@
   <section id="connect">
     <h2>Stay in the Loop</h2>
     <p>Follow Jackspace for new mixes, event announcements, and tribal transmissions:</p>
-    <ul>
-      <li><a href="https://mixcloud.com/jackspaceSF" target="_blank">Mixcloud</a></li>
-      <li><a href="https://facebook.com/dj.jackspace" target="_blank">Facebook</a></li>
-      <li><a href="https://instagram.com/djjackspace" target="_blank">Instagram</a></li>
-      <li><a href="https://www.youtube.com/channel/UC7C-wQTX_NehrhJTAA44EZw" target="_blank">YouTube</a></li>
+    <ul class="social-icons">
+      <li><a href="https://mixcloud.com/jackspaceSF" target="_blank"><img src="images/icons/mixcloud.svg" alt="Mixcloud"></a></li>
+      <li><a href="https://facebook.com/dj.jackspace" target="_blank"><img src="images/icons/facebook.svg" alt="Facebook"></a></li>
+      <li><a href="https://instagram.com/djjackspace" target="_blank"><img src="images/icons/instagram.svg" alt="Instagram"></a></li>
+      <li><a href="https://www.youtube.com/channel/UC7C-wQTX_NehrhJTAA44EZw" target="_blank"><img src="images/icons/youtube.svg" alt="YouTube"></a></li>
+      <li><a href="https://bsky.app/profile/jackspace.bsky.social" target="_blank"><img src="images/icons/bluesky.svg" alt="Bluesky"></a></li>
     </ul>
   </section>
 
