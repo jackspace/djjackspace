@@ -3,135 +3,494 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DJ Jackspace – Galactic Grooves</title>
-  <meta name="description" content="Official DJ Jackspace website – mixes, gigs, and galactic vibes.">
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {font-family: 'Poppins', sans-serif;}
-    .neon {color:#ff00ff;}
-  </style>
+  <title>DJ Jackspace – Professional Electronic Music Artist</title>
+  <meta name="description" content="Professional DJ Jackspace - Electronic music artist, mixing cosmic sounds and galactic grooves. Book for events, listen to latest mixes.">
+  <meta name="keywords" content="DJ, Electronic Music, Mixcloud, House Music, Techno, Progressive, Cosmic">
+  <meta property="og:title" content="DJ Jackspace - Professional Electronic Music Artist">
+  <meta property="og:description" content="Professional DJ mixing cosmic sounds and galactic grooves">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dj.jackspace.com">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/jackspace_small.jpg">
+  
+  <!-- Fonts and Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/tailwindcss@^3/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
 </head>
-<body class="bg-gray-900 text-gray-100">
-  <!-- Navbar -->
-  <header class="fixed w-full z-50 bg-gray-900 bg-opacity-80 backdrop-blur">
-    <div class="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
-      <a href="#" class="text-2xl font-bold neon">Jackspace</a>
-      <nav class="space-x-6 hidden md:block">
-        <a href="#music" class="hover:text-purple-400">Music</a>
-                <a href="#mixcloud" class="hover:text-purple-400">Mixcloud</a>
-        <a href="#gigs" class="hover:text-purple-400">Gigs</a>
-        <a href="#gallery" class="hover:text-purple-400">Gallery</a>
-        <a href="#contact" class="hover:text-purple-400">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <!-- Hero -->
-  <section class="relative h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1350&q=80');">
-    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-    <div class="relative z-10 max-w-3xl mx-auto px-6">
-      <h1 class="text-5xl md:text-7xl font-extrabold drop-shadow-lg neon">DJ JACKSPACE</h1>
-      <p class="mt-6 text-xl md:text-2xl">Beats that move bodies &amp; spirits</p>
-      <a href="#music" class="mt-8 inline-block px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-full text-white font-semibold transition">Listen Now</a>
+<body class="bg-black text-white overflow-x-hidden">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-purple-500/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <img src="images/jackspace_small.jpg" alt="DJ Jackspace" class="h-10 w-10 rounded-full mr-3">
+          <span class="text-xl font-bold text-purple-400">DJ Jackspace</span>
+        </div>
+        
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#music" class="nav-link">Music</a>
+            <a href="#mixes" class="nav-link">Latest Mixes</a>
+            <a href="#events" class="nav-link">Events</a>
+            <a href="#gallery" class="nav-link">Gallery</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </div>
+        </div>
+        
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="text-white">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-black/95 backdrop-blur-md">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="#home" class="mobile-nav-link">Home</a>
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#music" class="mobile-nav-link">Music</a>
+        <a href="#mixes" class="mobile-nav-link">Latest Mixes</a>
+        <a href="#events" class="mobile-nav-link">Events</a>
+        <a href="#gallery" class="mobile-nav-link">Gallery</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center">
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-900/50 to-blue-900/50"></div>
+    <div class="absolute inset-0 bg-black/40"></div>
+    
+    <!-- Animated background -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="stars"></div>
+      <div class="stars2"></div>
+      <div class="stars3"></div>
+    </div>
+    
+    <div class="relative z-10 text-center max-w-5xl mx-auto px-4">
+      <div class="mb-8">
+        <img src="images/jackspace_DJ_logo.png" alt="DJ Jackspace Logo" class="h-32 w-32 mx-auto rounded-full border-4 border-purple-400 shadow-2xl shadow-purple-500/50">
+      </div>
+      
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 gradient-text">
+        DJ JACKSPACE
+      </h1>
+      
+      <p class="text-xl md:text-2xl lg:text-3xl mb-8 text-gray-300 font-light">
+        Cosmic Sounds • Galactic Grooves • Professional Electronic Music
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+        <a href="#music" class="btn-primary">
+          <i class="fas fa-play mr-2"></i>Listen Now
+        </a>
+        <a href="#contact" class="btn-secondary">
+          <i class="fas fa-calendar mr-2"></i>Book Event
+        </a>
+      </div>
+      
+      <div class="flex justify-center space-x-6">
+        <a href="https://www.mixcloud.com/djjackspace/" target="_blank" class="social-link">
+          <i class="fab fa-mixcloud"></i>
+        </a>
+        <a href="#" class="social-link">
+          <i class="fab fa-spotify"></i>
+        </a>
+        <a href="#" class="social-link">
+          <i class="fab fa-soundcloud"></i>
+        </a>
+        <a href="#" class="social-link">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="social-link">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+      </div>
     </div>
   </section>
 
-  <!-- Music -->
-  <section id="music" class="py-20 bg-gray-800">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-4 neon">Latest Mixes</h2>
-      <p class="mb-10 text-gray-300">Float through space with curated cosmic sets.</p>
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-gradient-to-b from-purple-900/20 to-transparent">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="section-title">About DJ Jackspace</h2>
+        <div class="section-divider"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <h3 class="text-3xl font-bold text-purple-400">Professional Electronic Music Artist</h3>
+          <p class="text-lg text-gray-300 leading-relaxed">
+            With a passion for cosmic soundscapes and galactic grooves, DJ Jackspace creates immersive musical journeys that transport listeners to otherworldly dimensions. Specializing in progressive house, techno, and ambient electronic music.
+          </p>
+          <p class="text-lg text-gray-300 leading-relaxed">
+            From intimate club settings to large festival stages, every performance is crafted to create unforgettable experiences that connect souls through the universal language of music.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-6 pt-6">
+            <div class="stat-card">
+              <div class="text-2xl font-bold text-purple-400">500+</div>
+              <div class="text-sm text-gray-400">Live Performances</div>
+            </div>
+            <div class="stat-card">
+              <div class="text-2xl font-bold text-purple-400">50K+</div>
+              <div class="text-sm text-gray-400">Monthly Listeners</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="relative">
+          <img src="images/20230826_Jackspace_Oasis_taken_by_Rob_Kern_372851693_7209572219070998_1067211973000779554_n.jpg" 
+               alt="DJ Jackspace performing" 
+               class="rounded-2xl shadow-2xl shadow-purple-500/20">
+          <div class="absolute inset-0 rounded-2xl ring-1 ring-purple-500/20"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Music Section -->
+  <section id="music" class="py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="section-title">Music Platforms</h2>
+        <div class="section-divider"></div>
+        <p class="text-gray-400 mt-4">Stream my music across all major platforms</p>
+      </div>
+      
       <div class="grid md:grid-cols-2 gap-8">
-        <iframe class="w-full h-60" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/123456789&color=%23ff00ff"></iframe>
-        <iframe class="w-full h-60" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-      </div>
-    </div>
-  </section>
-    <!-- Mixcloud Shows -->
-  <section id="mixcloud" class="py-20 bg-gray-900">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-4 neon">Mixcloud Shows</h2>
-      <p class="mb-10 text-gray-300">Catch full-length shows and journey deeper.</p>
-      <div class="space-y-8">
-        <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fdjjackspace%2Fcosmic-mix-01%2F" frameborder="0"></iframe>
-        <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fdjjackspace%2Fcosmic-mix-02%2F" frameborder="0"></iframe>
-        <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fdjjackspace%2Fcosmic-mix-03%2F" frameborder="0"></iframe>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Gigs -->
-  <section id="gigs" class="py-20 bg-gray-900">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-4 neon text-center">Upcoming Gigs</h2>
-      <p class="mb-10 text-center text-gray-300 italic">“Music is the bridge between the stars and our hearts.”</p>
-      <div class="space-y-8">
-        <!-- Gig 1 -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col md:flex-row md:items-center md:justify-between">
-          <div>
-            <h3 class="text-2xl font-semibold">El Bar Camaleón, Ajijic</h3>
-            <p class="text-gray-400">June 21, 2025 · 11 AM – Close</p>
-            <p class="text-gray-400">Carretera Chapala–Jocotepec 57, Ajijic, Jal., Mexico</p>
+        <!-- Spotify -->
+        <div class="music-platform-card">
+          <div class="flex items-center mb-4">
+            <i class="fab fa-spotify text-green-500 text-2xl mr-3"></i>
+            <h3 class="text-xl font-semibold">Spotify Playlists</h3>
           </div>
-          <a href="https://maps.app.goo.gl/8h7mF3KZq5C1mXQH6" target="_blank" class="mt-4 md:mt-0 inline-block px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full">Open in Maps</a>
+          <iframe 
+            class="w-full h-80 rounded-lg" 
+            src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator&theme=0" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+          </iframe>
         </div>
-        <!-- Gig 2 -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col md:flex-row md:items-center md:justify-between">
-          <div>
-            <h3 class="text-2xl font-semibold">Pride Festival</h3>
-            <p class="text-gray-400">June 27, 2025 · 5 PM – Late</p>
-            <p class="text-gray-400">Spinning after the band <em>Mary’s Island</em></p>
+        
+        <!-- SoundCloud -->
+        <div class="music-platform-card">
+          <div class="flex items-center mb-4">
+            <i class="fab fa-soundcloud text-orange-500 text-2xl mr-3"></i>
+            <h3 class="text-xl font-semibold">SoundCloud Tracks</h3>
           </div>
-          <a href="#contact" class="mt-4 md:mt-0 inline-block px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full">Get Tickets</a>
+          <iframe 
+            class="w-full h-80 rounded-lg" 
+            scrolling="no" 
+            frameborder="no" 
+            allow="autoplay" 
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/123456789&color=%23ff00ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+          </iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section id="gallery" class="py-20 bg-gray-800">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-4 neon">Gallery</h2>
-      <p class="mb-10 text-gray-300">Moments from past cosmic journeys.</p>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <img class="w-full h-48 object-cover rounded-lg" src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=500&q=60" alt="DJ booth">
-        <img class="w-full h-48 object-cover rounded-lg" src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?auto=format&fit=crop&w=500&q=60" alt="Crowd dancing">
-        <img class="w-full h-48 object-cover rounded-lg" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=60" alt="Lights">
-        <img class="w-full h-48 object-cover rounded-lg" src="https://images.unsplash.com/photo-1535930749574-1399327ce78f?auto=format&fit=crop&w=500&q=60" alt="Stage">
-        <img class="w-full h-48 object-cover rounded-lg" src="https://images.unsplash.com/photo-1533106418980-94b2f2e8b2b4?auto=format&fit=crop&w=500&q=60" alt="Turntables">
-        <img class="w-full h-48 object-cover rounded-lg" src="https://images.unsplash.com/photo-1518991791750-78be34bed5d5?auto=format&fit=crop&w=500&q=60" alt="Festival">
+  <!-- Latest Mixes Section -->
+  <section id="mixes" class="py-20 bg-gradient-to-b from-purple-900/10 to-transparent">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="section-title">Latest Mixcloud Sets</h2>
+        <div class="section-divider"></div>
+        <p class="text-gray-400 mt-4">Fresh cosmic journeys updated automatically</p>
+      </div>
+      
+      <div id="mixcloud-container" class="space-y-6">
+        <!-- Mixcloud sets will be loaded dynamically here -->
+        <div class="mixcloud-set">
+          <iframe width="100%" height="120" 
+                  src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fdjjackspace%2Fcosmic-mix-01%2F" 
+                  frameborder="0" class="rounded-lg">
+          </iframe>
+        </div>
+        <div class="mixcloud-set">
+          <iframe width="100%" height="120" 
+                  src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fdjjackspace%2Fcosmic-mix-02%2F" 
+                  frameborder="0" class="rounded-lg">
+          </iframe>
+        </div>
+        <div class="mixcloud-set">
+          <iframe width="100%" height="120" 
+                  src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fdjjackspace%2Fcosmic-mix-03%2F" 
+                  frameborder="0" class="rounded-lg">
+          </iframe>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="https://www.mixcloud.com/djjackspace/" target="_blank" class="btn-secondary">
+          <i class="fab fa-mixcloud mr-2"></i>View All on Mixcloud
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-20 bg-gray-900">
-    <div class="max-w-3xl mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-4 neon text-center">Contact</h2>
-      <p class="mb-10 text-center text-gray-300">Bookings, collaborations, or just to say hello – drop a line.</p>
-      <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-6">
-        <div>
-          <label class="block mb-2">Name</label>
-          <input type="text" name="name" required class="w-full px-4 py-2 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600">
+  <!-- Events Section -->
+  <section id="events" class="py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="section-title">Upcoming Events</h2>
+        <div class="section-divider"></div>
+        <p class="text-gray-400 mt-4">Catch me live at these cosmic gatherings</p>
+      </div>
+      
+      <div class="space-y-6">
+        <!-- Event 1 -->
+        <div class="event-card">
+          <div class="event-date">
+            <div class="day">21</div>
+            <div class="month">JUN</div>
+            <div class="year">2025</div>
+          </div>
+          <div class="event-details">
+            <h3 class="event-title">El Bar Camaleón, Ajijic</h3>
+            <p class="event-time">11:00 AM - Close</p>
+            <p class="event-location">
+              <i class="fas fa-map-marker-alt mr-2"></i>
+              Carretera Chapala–Jocotepec 57, Ajijic, Jal., Mexico
+            </p>
+            <p class="event-description">An intimate cosmic journey in the heart of Ajijic</p>
+          </div>
+          <div class="event-actions">
+            <a href="https://maps.app.goo.gl/8h7mF3KZq5C1mXQH6" target="_blank" class="btn-small">
+              <i class="fas fa-directions mr-1"></i>Directions
+            </a>
+          </div>
         </div>
-        <div>
-          <label class="block mb-2">Email</label>
-          <input type="email" name="email" required class="w-full px-4 py-2 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600">
+        
+        <!-- Event 2 -->
+        <div class="event-card">
+          <div class="event-date">
+            <div class="day">27</div>
+            <div class="month">JUN</div>
+            <div class="year">2025</div>
+          </div>
+          <div class="event-details">
+            <h3 class="event-title">Pride Festival</h3>
+            <p class="event-time">5:00 PM - Late</p>
+            <p class="event-location">
+              <i class="fas fa-map-marker-alt mr-2"></i>
+              Following Mary's Island
+            </p>
+            <p class="event-description">Celebrating love and music under the cosmic sky</p>
+          </div>
+          <div class="event-actions">
+            <a href="#contact" class="btn-small">
+              <i class="fas fa-ticket-alt mr-1"></i>Info
+            </a>
+          </div>
         </div>
-        <div>
-          <label class="block mb-2">Message</label>
-          <textarea name="message" rows="5" required class="w-full px-4 py-2 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-20 bg-gradient-to-b from-purple-900/10 to-transparent">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="section-title">Gallery</h2>
+        <div class="section-divider"></div>
+        <p class="text-gray-400 mt-4">Moments from the cosmic journey</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="gallery-item">
+          <img src="images/20230826_Jackspace_Oasis_taken_by_Rob_Kern_372851693_7209572219070998_1067211973000779554_n.jpg" 
+               alt="DJ Jackspace live performance" class="gallery-image">
         </div>
-        <button type="submit" class="w-full py-3 bg-purple-600 hover:bg-purple-700 rounded-full font-semibold">Send Message</button>
-      </form>
+        <div class="gallery-item">
+          <img src="images/20221008_124941-01.jpeg" 
+               alt="Studio session" class="gallery-image">
+        </div>
+        <div class="gallery-item">
+          <img src="images/20220820_123605_brown_derby.jpg" 
+               alt="Event performance" class="gallery-image">
+        </div>
+        <div class="gallery-item">
+          <img src="images/21949766_10154778024401345_2333363722065143237_o.jpg" 
+               alt="Festival performance" class="gallery-image">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" 
+               alt="DJ equipment" class="gallery-image">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?auto=format&fit=crop&w=800&q=80" 
+               alt="Crowd energy" class="gallery-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="section-divider"></div>
+        <p class="text-gray-400 mt-4">Ready to create something cosmic together?</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Contact Info -->
+        <div class="space-y-8">
+          <h3 class="text-2xl font-bold text-purple-400 mb-6">Let's Connect</h3>
+          
+          <div class="contact-item">
+            <i class="fas fa-envelope text-purple-400"></i>
+            <div>
+              <h4>Email</h4>
+              <p>bookings@dj.jackspace.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-calendar text-purple-400"></i>
+            <div>
+              <h4>Bookings</h4>
+              <p>Available for events, festivals, and private parties</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-music text-purple-400"></i>
+            <div>
+              <h4>Collaborations</h4>
+              <p>Open to remixes, original tracks, and creative projects</p>
+            </div>
+          </div>
+          
+          <div class="flex space-x-4 pt-6">
+            <a href="https://www.mixcloud.com/djjackspace/" target="_blank" class="social-link-large">
+              <i class="fab fa-mixcloud"></i>
+            </a>
+            <a href="#" class="social-link-large">
+              <i class="fab fa-spotify"></i>
+            </a>
+            <a href="#" class="social-link-large">
+              <i class="fab fa-soundcloud"></i>
+            </a>
+            <a href="#" class="social-link-large">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="contact-form-container">
+          <form id="contact-form" class="space-y-6">
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option value="booking">Event Booking</option>
+                <option value="collaboration">Collaboration</option>
+                <option value="general">General Inquiry</option>
+                <option value="press">Press & Media</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell me about your event or project..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn-primary w-full">
+              <i class="fas fa-paper-plane mr-2"></i>Send Message
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-6 bg-gray-800 text-center text-gray-400">
-    <p>&copy; 2025 DJ Jackspace. All rights reserved.</p>
+  <footer class="bg-black/50 py-12 border-t border-purple-500/20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <div class="flex items-center mb-4">
+            <img src="images/jackspace_small.jpg" alt="DJ Jackspace" class="h-10 w-10 rounded-full mr-3">
+            <span class="text-xl font-bold text-purple-400">DJ Jackspace</span>
+          </div>
+          <p class="text-gray-400">Professional electronic music artist creating cosmic soundscapes and galactic grooves.</p>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-purple-400">Quick Links</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="#music" class="hover:text-purple-400 transition-colors">Music</a></li>
+            <li><a href="#events" class="hover:text-purple-400 transition-colors">Events</a></li>
+            <li><a href="#gallery" class="hover:text-purple-400 transition-colors">Gallery</a></li>
+            <li><a href="#contact" class="hover:text-purple-400 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-purple-400">Follow the Journey</h4>
+          <div class="flex space-x-4">
+            <a href="https://www.mixcloud.com/djjackspace/" target="_blank" class="social-link">
+              <i class="fab fa-mixcloud"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-spotify"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-soundcloud"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-purple-500/20 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; 2025 DJ Jackspace. All rights reserved. Website auto-updated by Jackspace Agent.</p>
+      </div>
+    </div>
   </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
 </body>
 </html>
