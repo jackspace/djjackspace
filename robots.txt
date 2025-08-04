@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://djjackspace.com/sitemap.xml
+
+# Disallow access to admin areas if they exist
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.log$
+
+# Allow crawling of important content
+Allow: /software/
+Allow: /music/
+Allow: /gallery/
