@@ -3,16 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DJ Jackspace – Galactic Grooves</title>
-  <meta name="description" content="Official DJ Jackspace website – mixes, gigs, and galactic vibes.">
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>DJ Jackspace – Galactic Grooves | Electronic Music Producer & DJ</title>
+  <meta name="description" content="DJ Jackspace - Professional Electronic Music Producer & DJ. Listen to cosmic mixes, book gigs, and experience galactic beats that move bodies & spirits.">
+  <meta name="keywords" content="DJ Jackspace, Electronic Music, DJ, Producer, Cosmic Beats, Galactic Grooves, House Music, Techno, Dance Music">
+  <meta name="author" content="DJ Jackspace">
+  <meta property="og:title" content="DJ Jackspace – Galactic Grooves">
+  <meta property="og:description" content="Professional Electronic Music Producer & DJ - Cosmic beats that move bodies & spirits">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:url" content="https://djjackspace.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DJ Jackspace – Galactic Grooves">
+  <meta name="twitter:description" content="Professional Electronic Music Producer & DJ">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80">
+  <link rel="canonical" href="https://djjackspace.com">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <style>
-    body {font-family: 'Poppins', sans-serif;}
-    .neon {color:#ff00ff;}
+body {font-family: 'Poppins', sans-serif; scroll-behavior: smooth;}
+    .neon {color:#ff00ff; text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;}
+    .glass {background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);}
+    .animate-float {animation: float 6s ease-in-out infinite;}
+    .animate-pulse-slow {animation: pulse 3s ease-in-out infinite;}
+    .gradient-text {background: linear-gradient(45deg, #ff00ff, #00ffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+    .animate-bounce-slow {animation: bounce 2s infinite;}
+    .animate-slide-up {animation: slideUp 0.6s ease-out;}
+    .hover-scale {transition: transform 0.3s ease; cursor: pointer;}
+    .hover-scale:hover {transform: scale(1.05);}
+    .progress-bar {width: 0%; height: 4px; background: linear-gradient(90deg, #ff00ff, #00ffff); transition: width 0.3s ease;}
+    .testimonial-card {background: linear-gradient(135deg, rgba(255,0,255,0.1), rgba(0,255,255,0.1)); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1);}
+    .newsletter-input {background: rgba(255,255,255,0.1); border: 2px solid rgba(255,0,255,0.3); backdrop-filter: blur(10px);}
+    .newsletter-input:focus {border-color: #ff00ff; box-shadow: 0 0 20px rgba(255,0,255,0.3);}
+    .gig-card {background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(168, 85, 247, 0.1)); transition: all 0.3s ease; border-left: 4px solid #ff00ff;}
+    .gig-card:hover {transform: translateX(10px); box-shadow: 0 10px 30px rgba(255,0,255,0.2);}
+    .social-icon {transition: all 0.3s ease; filter: grayscale(100%);}
+    .social-icon:hover {filter: grayscale(0%); transform: scale(1.2);}
+    .fade-in {opacity: 0; animation: fadeIn 1s ease-in-out forwards;}
+    .fade-in-delay-1 {animation-delay: 0.2s;}
+    .fade-in-delay-2 {animation-delay: 0.4s;}
+    .fade-in-delay-3 {animation-delay: 0.6s;}
+    @keyframes float {0%, 100% {transform: translateY(0px);} 50% {transform: translateY(-10px);}}
+    @keyframes fadeIn {from {opacity: 0; transform: translateY(30px);} to {opacity: 1; transform: translateY(0);}}
+    @keyframes slideUp {from {transform: translateY(100px); opacity: 0;} to {transform: translateY(0); opacity: 1;}}
+    .mixcloud-player {transition: all 0.3s ease; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 32px rgba(255, 0, 255, 0.3);}
+    .mixcloud-player:hover {transform: translateY(-5px); box-shadow: 0 12px 40px rgba(255, 0, 255, 0.5);}
+    .loading-spinner {border: 3px solid rgba(255, 255, 255, 0.3); border-top: 3px solid #ff00ff; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite;}
+    @keyframes spin {0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);}}
+    .parallax {background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;}
+    .dark-mode {transition: all 0.3s ease;}
+    .lazy {opacity: 0; transition: opacity 0.3s;}
+    .lazy.loaded {opacity: 1;}
+    .scroll-indicator {position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #ff00ff, #00ffff); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; z-index: 1000;}
   </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-indicator" id="scrollProgress"></div>
+  
   <!-- Navbar -->
   <header class="fixed w-full z-50 bg-gray-900 bg-opacity-80 backdrop-blur">
     <div class="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
@@ -106,8 +155,73 @@
     </div>
   </section>
 
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-20 bg-gray-800">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-4 neon">What People Are Saying</h2>
+      <p class="mb-10 text-gray-300">Hear from fans and fellow artists about the cosmic journey.</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="testimonial-card p-6 rounded-lg fade-in">
+          <div class="text-yellow-400 mb-4">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-gray-300 mb-4">"DJ Jackspace took us on an incredible journey through sound. The energy was absolutely cosmic!"</p>
+          <div class="font-semibold">Sarah M.</div>
+          <div class="text-sm text-gray-400">Music Enthusiast</div>
+        </div>
+        <div class="testimonial-card p-6 rounded-lg fade-in fade-in-delay-1">
+          <div class="text-yellow-400 mb-4">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-gray-300 mb-4">"Professional, talented, and knows how to read the crowd. Perfect for any event!"</p>
+          <div class="font-semibold">Carlos R.</div>
+          <div class="text-sm text-gray-400">Event Organizer</div>
+        </div>
+        <div class="testimonial-card p-6 rounded-lg fade-in fade-in-delay-2">
+          <div class="text-yellow-400 mb-4">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-gray-300 mb-4">"The mixes are out of this world! Keep the galactic grooves coming!"</p>
+          <div class="font-semibold">Alex T.</div>
+          <div class="text-sm text-gray-400">DJ & Producer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section id="newsletter" class="py-20 bg-gray-900">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-4 neon">Stay in the Loop</h2>
+      <p class="mb-8 text-gray-300">Get notified about new mixes, upcoming gigs, and exclusive content.</p>
+      <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
+        <input type="email" placeholder="Enter your email" class="newsletter-input flex-1 px-4 py-3 rounded-lg text-white placeholder-gray-400 focus:outline-none">
+        <button type="submit" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-lg font-semibold transition-all duration-300 hover:scale-105">
+          Subscribe
+        </button>
+      </form>
+      <div class="mt-6 flex justify-center space-x-6">
+        <a href="#" class="social-icon text-2xl text-gray-400 hover:text-purple-400">
+          <i class="fab fa-spotify"></i>
+        </a>
+        <a href="#" class="social-icon text-2xl text-gray-400 hover:text-pink-400">
+          <i class="fab fa-soundcloud"></i>
+        </a>
+        <a href="#" class="social-icon text-2xl text-gray-400 hover:text-blue-400">
+          <i class="fab fa-mixcloud"></i>
+        </a>
+        <a href="#" class="social-icon text-2xl text-gray-400 hover:text-red-400">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="social-icon text-2xl text-gray-400 hover:text-blue-500">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact -->
-  <section id="contact" class="py-20 bg-gray-900">
+  <section id="contact" class="py-20 bg-gray-800">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="text-4xl font-bold mb-4 neon text-center">Contact</h2>
       <p class="mb-10 text-center text-gray-300">Bookings, collaborations, or just to say hello – drop a line.</p>
@@ -124,7 +238,7 @@
           <label class="block mb-2">Message</label>
           <textarea name="message" rows="5" required class="w-full px-4 py-2 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"></textarea>
         </div>
-        <button type="submit" class="w-full py-3 bg-purple-600 hover:bg-purple-700 rounded-full font-semibold">Send Message</button>
+        <button type="submit" class="w-full py-3 bg-purple-600 hover:bg-purple-700 rounded-full font-semibold hover-scale">Send Message</button>
       </form>
     </div>
   </section>
