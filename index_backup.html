@@ -104,16 +104,9 @@ body {font-family: 'Poppins', sans-serif; scroll-behavior: smooth;}
       <h2 class="text-4xl font-bold mb-4 neon">Mixcloud Shows</h2>
       <p class="mb-10 text-gray-300">Catch full-length shows and journey deeper.</p>
       <div class="space-y-8">
-        <!-- Top 5 Highlighted DJ Sets -->
-        <div class="text-center mb-6">
-          <p class="text-lg text-purple-300">🌟 Featured DJ Sets</p>
-        </div>
-        <!-- Replace these with your actual 5 highlighted Mixcloud shows -->
-        <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fdjjackspace%2Ffeatured-set-1%2F" frameborder="0"></iframe>
-        <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fdjjackspace%2Ffeatured-set-2%2F" frameborder="0"></iframe>
-        <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fdjjackspace%2Ffeatured-set-3%2F" frameborder="0"></iframe>
-        <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fdjjackspace%2Ffeatured-set-4%2F" frameborder="0"></iframe>
-        <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fdjjackspace%2Ffeatured-set-5%2F" frameborder="0"></iframe>
+        <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fdjjackspace%2Fcosmic-mix-01%2F" frameborder="0"></iframe>
+        <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fdjjackspace%2Fcosmic-mix-02%2F" frameborder="0"></iframe>
+        <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fdjjackspace%2Fcosmic-mix-03%2F" frameborder="0"></iframe>
       </div>
     </div>
   </section>
@@ -157,30 +150,52 @@ body {font-family: 'Poppins', sans-serif; scroll-behavior: smooth;}
     </div>
   </section>
 
-  <!-- Gigs (Hidden when no shows scheduled) -->
+  <!-- Gigs -->
   <section id="gigs" class="py-20 bg-gray-900" style="display: none;">
     <div class="max-w-4xl mx-auto px-6">
       <h2 class="text-4xl font-bold mb-4 neon text-center">Upcoming Gigs</h2>
-      <p class="mb-10 text-center text-gray-300 italic">"Music is the bridge between the stars and our hearts."</p>
-      <div class="space-y-8" id="gigs-container">
-        <!-- Gigs will be populated dynamically when shows are scheduled -->
+      <p class="mb-10 text-center text-gray-300 italic">“Music is the bridge between the stars and our hearts.”</p>
+      <div class="space-y-8">
+        <!-- Gig 1 -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col md:flex-row md:items-center md:justify-between">
+          <div>
+            <h3 class="text-2xl font-semibold">El Bar Camaleón, Ajijic</h3>
+            <p class="text-gray-400">June 21, 2025 · 11 AM – Close</p>
+            <p class="text-gray-400">Carretera Chapala–Jocotepec 57, Ajijic, Jal., Mexico</p>
+          </div>
+          <a href="https://maps.app.goo.gl/8h7mF3KZq5C1mXQH6" target="_blank" class="mt-4 md:mt-0 inline-block px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full">Open in Maps</a>
+        </div>
+        <!-- Gig 2 -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col md:flex-row md:items-center md:justify-between">
+          <div>
+            <h3 class="text-2xl font-semibold">Pride Festival</h3>
+            <p class="text-gray-400">June 27, 2025 · 5 PM – Late</p>
+            <p class="text-gray-400">Spinning after the band <em>Mary’s Island</em></p>
+          </div>
+          <a href="#contact" class="mt-4 md:mt-0 inline-block px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full">Get Tickets</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Gallery (Hidden when empty, will integrate with SmugMug) -->
-  <section id="gallery" class="py-20 bg-gray-800" style="display: none;">
+  <!-- Gallery -->
+  <section id="gallery" class="py-20 bg-gray-800">
     <div class="max-w-6xl mx-auto px-6 text-center">
       <h2 class="text-4xl font-bold mb-4 neon">Gallery</h2>
       <p class="mb-10 text-gray-300">Moments from past cosmic journeys.</p>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="gallery-container">
-        <!-- Gallery will be populated with SmugMug album integration -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <img class="w-full h-48 object-cover rounded-lg" src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=500&q=60" alt="DJ booth">
+        <img class="w-full h-48 object-cover rounded-lg" src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?auto=format&fit=crop&w=500&q=60" alt="Crowd dancing">
+        <img class="w-full h-48 object-cover rounded-lg" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=60" alt="Lights">
+        <img class="w-full h-48 object-cover rounded-lg" src="https://images.unsplash.com/photo-1535930749574-1399327ce78f?auto=format&fit=crop&w=500&q=60" alt="Stage">
+        <img class="w-full h-48 object-cover rounded-lg" src="https://images.unsplash.com/photo-1533106418980-94b2f2e8b2b4?auto=format&fit=crop&w=500&q=60" alt="Turntables">
+        <img class="w-full h-48 object-cover rounded-lg" src="https://images.unsplash.com/photo-1518991791750-78be34bed5d5?auto=format&fit=crop&w=500&q=60" alt="Festival">
       </div>
     </div>
   </section>
 
-  <!-- Testimonials (Hidden but preserved for future use) -->
-  <section id="testimonials" class="py-20 bg-gray-800" style="display: none;">
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-20 bg-gray-800">
     <div class="max-w-6xl mx-auto px-6 text-center">
       <h2 class="text-4xl font-bold mb-4 neon">What People Are Saying</h2>
       <p class="mb-10 text-gray-300">Hear from fans and fellow artists about the cosmic journey.</p>
