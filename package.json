@@ -1,0 +1,31 @@
+{
+  "name": "dj-jackspace-website",
+  "version": "2.0.0",
+  "description": "DJ Jackspace Official Website - San Francisco's Cosmic DJ",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0",
+    "vite": "^5.0.10"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^3.11.0"
+  },
+  "keywords": [
+    "dj",
+    "music",
+    "electronic",
+    "san-francisco",
+    "mixcloud",
+    "techno",
+    "house"
+  ],
+  "author": "DJ Jackspace",
+  "license": "MIT"
+}
