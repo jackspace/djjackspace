@@ -53,8 +53,8 @@
     "image": "https://dj.jackspace.com/images/jackspace_DJ%20image4.png"
   }
   </script>
-  <script type="module" crossorigin src="/assets/main-7IBIUIsw-BvFi5ZI5-BvFi5ZI5-hDZ_rtWM.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-7IBIUIsw-BvFi5ZI5-BvFi5ZI5-BvFi5ZI5.css">
+  <script type="module" crossorigin src="/assets/main-7IBIUIsw-BvFi5ZI5-BvFi5ZI5-BvFi5ZI5-DxAHWnqX.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-7IBIUIsw-BvFi5ZI5-BvFi5ZI5-BvFi5ZI5-BvFi5ZI5.css">
 </head>
 <body class="antialiased">
 
@@ -73,6 +73,7 @@
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8">
           <a href="#about" class="text-gray-300 hover:text-neon-purple transition-colors duration-300">About</a>
+          <a href="#posts" class="text-gray-300 hover:text-neon-cyan transition-colors duration-300">Posts</a>
           <a href="#mixcloud" class="text-gray-300 hover:text-neon-cyan transition-colors duration-300">Shows</a>
           <a href="#software" class="text-gray-300 hover:text-neon-purple transition-colors duration-300">Software</a>
           <a href="#contact" class="btn-neon !px-4 !py-2 text-sm">Contact</a>
@@ -88,6 +89,7 @@
       <!-- Mobile Navigation -->
       <div id="mobile-menu" class="hidden md:hidden mt-6 pb-4 space-y-4">
         <a href="#about" class="block text-gray-300 hover:text-neon-purple transition-colors">About</a>
+        <a href="#posts" class="block text-gray-300 hover:text-neon-cyan transition-colors">Posts</a>
         <a href="#mixcloud" class="block text-gray-300 hover:text-neon-cyan transition-colors">Shows</a>
         <a href="#software" class="block text-gray-300 hover:text-neon-purple transition-colors">Software</a>
         <a href="#contact" class="block text-gray-300 hover:text-neon-purple transition-colors">Contact</a>
@@ -189,6 +191,46 @@
               <i class="fab fa-instagram text-xl"></i>
             </a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mixcloud Posts Section -->
+  <section id="posts" class="py-20 md:py-32 bg-cosmic-black">
+    <div class="section-container">
+      <div class="text-center mb-16 reveal">
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-4 neon-text-cyan">
+          Latest Updates
+        </h2>
+        <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+          Follow my journey through music and see what's happening now
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <!-- Mixcloud Posts Feed -->
+        <div class="reveal glass-dark p-8 rounded-2xl">
+          <iframe
+            width="100%"
+            height="500"
+            src="https://www.mixcloud.com/widget/iframe/?feed=%2FjackspaceSF%2Fposts%2F"
+            frameborder="0"
+            loading="lazy"
+            class="rounded-xl"
+          ></iframe>
+        </div>
+
+        <!-- View All Posts -->
+        <div class="reveal text-center mt-8">
+          <a
+            href="https://www.mixcloud.com/jackspaceSF/posts/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-neon inline-flex items-center"
+          >
+            <i class="fas fa-newspaper mr-2"></i>View All Posts on Mixcloud
+          </a>
         </div>
       </div>
     </div>
@@ -470,7 +512,7 @@
         <!-- Quick Links -->
         <nav class="flex justify-center gap-6 flex-wrap text-sm">
           <a href="#about" class="text-gray-400 hover:text-neon-purple transition-colors">About</a>
-          <a href="#music" class="text-gray-400 hover:text-neon-purple transition-colors">Music</a>
+          <a href="#posts" class="text-gray-400 hover:text-neon-cyan transition-colors">Posts</a>
           <a href="#mixcloud" class="text-gray-400 hover:text-neon-cyan transition-colors">Shows</a>
           <a href="#software" class="text-gray-400 hover:text-neon-purple transition-colors">Software</a>
           <a href="#contact" class="text-gray-400 hover:text-neon-purple transition-colors">Contact</a>
