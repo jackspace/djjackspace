@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-neon-purple: #ff00ff;
+    --color-neon-cyan: #00ffff;
+    --color-neon-pink: #ff006e;
+  }
+
+  * {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-cosmic-black text-white overflow-x-hidden;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+  }
+}
+
+@layer components {
+  /* Neon text effect */
+  .neon-text {
+    @apply text-neon-purple;
+    text-shadow:
+      0 0 10px var(--color-neon-purple),
+      0 0 20px var(--color-neon-purple),
+      0 0 30px var(--color-neon-purple),
+      0 0 40px var(--color-neon-purple);
+  }
+
+  .neon-text-cyan {
+    @apply text-neon-cyan;
+    text-shadow:
+      0 0 10px var(--color-neon-cyan),
+      0 0 20px var(--color-neon-cyan),
+      0 0 30px var(--color-neon-cyan);
+  }
+
+  /* Glass morphism */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Card hover effects */
+  .card-3d {
+    @apply transition-all duration-300 ease-out;
+    transform-style: preserve-3d;
+  }
+
+  .card-3d:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow:
+      0 20px 40px rgba(255, 0, 255, 0.2),
+      0 0 20px rgba(255, 0, 255, 0.3);
+  }
+
+  /* Button styles */
+  .btn-neon {
+    @apply px-6 py-3 rounded-lg font-semibold uppercase tracking-wider;
+    @apply border-2 border-neon-purple text-neon-purple;
+    @apply transition-all duration-300;
+    @apply hover:bg-neon-purple hover:text-black hover:shadow-neon;
+  }
+
+  .btn-neon-cyan {
+    @apply px-6 py-3 rounded-lg font-semibold uppercase tracking-wider;
+    @apply border-2 border-neon-cyan text-neon-cyan;
+    @apply transition-all duration-300;
+    @apply hover:bg-neon-cyan hover:text-black hover:shadow-neon-cyan;
+  }
+
+  /* Vinyl record effect */
+  .vinyl {
+    @apply rounded-full relative;
+    @apply transition-transform duration-700 ease-out;
+    background: radial-gradient(circle, #1a1a1a 0%, #000 40%, #1a1a1a 41%, #000 100%);
+  }
+
+  .vinyl::before {
+    content: '';
+    @apply absolute inset-0 rounded-full;
+    background: radial-gradient(circle at center, transparent 30%, rgba(255,255,255,0.1) 31%, transparent 32%);
+  }
+
+  .vinyl:hover {
+    transform: rotate(180deg) scale(1.05);
+  }
+
+  /* Section styling */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #ff00ff 0%, #00ffff 100%);
+  }
+
+  /* Scroll indicator */
+  .scroll-indicator {
+    @apply w-6 h-10 border-2 border-white rounded-full;
+    @apply flex justify-center;
+  }
+
+  .scroll-indicator::before {
+    content: '';
+    @apply w-1 h-3 bg-white rounded-full;
+    @apply animate-bounce mt-2;
+  }
+
+  /* Parallax container */
+  .parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* Music player card */
+  .music-card {
+    @apply glass-dark rounded-xl overflow-hidden;
+    @apply transition-all duration-500 ease-out;
+    @apply hover:scale-105 hover:shadow-glow;
+  }
+
+  /* Tour date card */
+  .tour-card {
+    @apply glass p-6 rounded-lg;
+    @apply border-l-4 border-neon-cyan;
+    @apply transition-all duration-300;
+    @apply hover:border-neon-purple hover:translate-x-2;
+  }
+
+  /* Form inputs */
+  .input-neon {
+    @apply w-full px-4 py-3 rounded-lg;
+    @apply bg-transparent border-2 border-gray-700;
+    @apply text-white placeholder-gray-500;
+    @apply focus:border-neon-purple focus:outline-none focus:shadow-neon;
+    @apply transition-all duration-300;
+  }
+
+  /* Social icons */
+  .social-icon {
+    @apply w-12 h-12 flex items-center justify-center;
+    @apply rounded-full border-2 border-gray-700;
+    @apply text-gray-400 transition-all duration-300;
+    @apply hover:border-neon-purple hover:text-neon-purple hover:scale-110;
+  }
+
+  /* Loading spinner */
+  .spinner {
+    @apply w-16 h-16 border-4 border-gray-800 border-t-neon-purple rounded-full;
+    @apply animate-spin;
+  }
+}
+
+@layer utilities {
+  /* Custom utilities */
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Perspective for 3D effects */
+  .perspective {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  /* Background patterns */
+  .bg-stars {
+    background-image:
+      radial-gradient(2px 2px at 20px 30px, white, transparent),
+      radial-gradient(2px 2px at 60px 70px, white, transparent),
+      radial-gradient(1px 1px at 50px 50px, white, transparent),
+      radial-gradient(1px 1px at 130px 80px, white, transparent),
+      radial-gradient(2px 2px at 90px 10px, white, transparent);
+    background-size: 200px 200px;
+    background-color: #000;
+  }
+}
+
+/* Custom animations */
+@keyframes vinyl-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.vinyl-spinning {
+  animation: vinyl-spin 2s linear infinite;
+}
+
+/* Particle background */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
