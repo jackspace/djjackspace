@@ -193,7 +193,33 @@
             pointer-events: all;
         }
 
-        .dj-site iframe {}
+        .dj-site iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .back-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1001;
+            padding: 15px 30px;
+            background: rgba(0, 255, 136, 0.9);
+            color: #000;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+        }
+
+        .back-button:hover {
+            background: #00ff88;
+            transform: scale(1.1);
+        }
 
         /* Easter Eggs */
         .ufo {
