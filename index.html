@@ -22,7 +22,12 @@
         .living-room {
             width: 100vw;
             height: 100vh;
-            background: linear-gradient(180deg, #0a0015 0%, #1a0033 30%, #2d1b4e 100%);
+            background: #1a0033;
+            /* Fallback color */
+            background-image: url('/images/alien-room-concept-final.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             position: relative;
             transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
@@ -38,6 +43,7 @@
             width: 100%;
             height: 60%;
             overflow: hidden;
+            pointer-events: none;
         }
 
         .star {
@@ -61,44 +67,32 @@
             }
         }
 
-        /* Floor with Dr. Seuss-ish pattern */
-        .floor {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 45%;
-            background:
-                repeating-linear-gradient(90deg,
-                    #2d1b4e 0px,
-                    #2d1b4e 50px,
-                    #3d2b5e 50px,
-                    #3d2b5e 100px);
-            border-top: 5px solid #ff00ff;
-        }
-
         /* Alien TV in center */
         .tv-container {
             position: absolute;
-            top: 25%;
+            top: 35%;
+            /* Adjusted for image */
             left: 50%;
             transform: translateX(-50%);
-            width: 500px;
-            height: 350px;
+            width: 420px;
+            /* Adjusted for image */
+            height: 280px;
+            /* Adjusted for image */
             cursor: pointer;
             transition: all 0.4s;
+            opacity: 0.8;
         }
 
         .tv-container:hover {
             transform: translateX(-50%) scale(1.08);
+            opacity: 1;
         }
 
         .tv-body {
             width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, #4a4a6a 0%, #2a2a4a 100%);
+            height: 100%;
+            background: transparent;
             border-radius: 30px;
-            padding: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
             position: relative;
         }
 
@@ -109,10 +103,8 @@
             border-radius: 15px;
             position: relative;
             overflow: hidden;
-            border: 3px solid #1a1a2a;
-            box-shadow:
-                inset 0 0 50px rgba(0, 255, 255, 0.2),
-                0 0 80px rgba(0, 255, 255, 0.4);
+            border: none;
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
         }
 
         .tv-glow {
@@ -139,10 +131,10 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             background: rgba(0, 255, 136, 0.2);
-            border: 5px solid #00ff88;
+            border: 4px solid #00ff88;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -160,273 +152,49 @@
         .play-icon {
             width: 0;
             height: 0;
-            border-left: 40px solid #00ff88;
-            border-top: 25px solid transparent;
-            border-bottom: 25px solid transparent;
-            margin-left: 10px;
+            border-left: 30px solid #00ff88;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            margin-left: 8px;
         }
 
         .play-text {
             position: absolute;
-            bottom: -50px;
+            bottom: -40px;
             left: 50%;
             transform: translateX(-50%);
             color: #00ff88;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
             opacity: 0;
             transition: opacity 0.3s;
             text-shadow: 0 0 20px #00ff88;
             letter-spacing: 3px;
+            white-space: nowrap;
         }
 
         .tv-container:hover .play-text {
             opacity: 1;
         }
 
-        .tv-stand {
-            width: 150px;
-            height: 50px;
-            background: linear-gradient(180deg, #3a3a5a 0%, #2a2a4a 100%);
-            margin: 0 auto;
-            border-radius: 0 0 20px 20px;
-            position: relative;
-        }
-
-        /* Silhouettes - Dr. Seuss style */
-        .silhouettes {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
+        /* Fullscreen DJ Site */
+        .dj-site {
+            position: fixed;
+            inset: 0;
+            background: #000;
+            z-index: 1000;
+            opacity: 0;
             pointer-events: none;
+            transition: opacity 1s;
         }
 
-        /* Couch silhouette */
-        .couch-silhouette {
-            position: absolute;
-            bottom: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 700px;
-            height: 200px;
-            background: #000;
-            border-radius: 40px 40px 0 0;
-            opacity: 0.9;
+        .dj-site.active {
+            opacity: 1;
+            pointer-events: all;
         }
 
-        .couch-silhouette::before {
-            content: '';
-            position: absolute;
-            top: -40px;
-            left: 20px;
-            right: 20px;
-            height: 50px;
-            background: #000;
-            border-radius: 30px 30px 0 0;
-        }
-
-        /* Male alien - left side, arm over shoulder */
-        .alien-male {
-            position: absolute;
-            bottom: 18%;
-            left: 38%;
-            width: 100px;
-            height: 180px;
-            background: #000;
-            border-radius: 50% 50% 0 0;
-            opacity: 0.95;
-        }
-
-        /* Whimsical head shape */
-        .alien-male::before {
-            content: '';
-            position: absolute;
-            top: -60px;
-            left: 10px;
-            width: 80px;
-            height: 90px;
-            background: #000;
-            border-radius: 60% 40% 40% 60%;
-        }
-
-        /* Antenna */
-        .alien-male::after {
-            content: '●';
-            position: absolute;
-            top: -80px;
-            left: 35px;
-            color: #ff00ff;
-            font-size: 20px;
-            text-shadow: 0 0 20px #ff00ff;
-        }
-
-        /* Arm over shoulder */
-        .arm {
-            position: absolute;
-            top: 20px;
-            right: -80px;
-            width: 120px;
-            height: 30px;
-            background: #000;
-            border-radius: 15px;
-            transform: rotate(-10deg);
-        }
-
-        /* Female alien - right side, cuddled */
-        .alien-female {
-            position: absolute;
-            bottom: 18%;
-            right: 38%;
-            width: 90px;
-            height: 170px;
-            background: #000;
-            border-radius: 50% 50% 0 0;
-            opacity: 0.95;
-        }
-
-        /* Whimsical head */
-        .alien-female::before {
-            content: '';
-            position: absolute;
-            top: -55px;
-            right: 10px;
-            width: 70px;
-            height: 85px;
-            background: #000;
-            border-radius: 40% 60% 60% 40%;
-        }
-
-        /* Antenna with heart */
-        .alien-female::after {
-            content: '♥';
-            position: absolute;
-            top: -75px;
-            right: 25px;
-            color: #ff00ff;
-            font-size: 18px;
-            text-shadow: 0 0 20px #ff00ff;
-            animation: heartbeat 1.5s infinite;
-        }
-
-        @keyframes heartbeat {
-
-            0%,
-            100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.2);
-            }
-        }
-
-        /* Alien snacks bowl */
-        .snacks {
-            position: absolute;
-            bottom: 28%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 40px;
-            background: #000;
-            border-radius: 50%;
-            opacity: 0.9;
-        }
-
-        .snacks::before {
-            content: '🍿';
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 24px;
-            filter: hue-rotate(120deg);
-        }
-
-        /* Alien dog - Dr. Seuss style */
-        .alien-dog {
-            position: absolute;
-            bottom: 12%;
-            left: 25%;
-            width: 80px;
-            height: 60px;
-            background: #000;
-            border-radius: 40% 60% 30% 70%;
-            opacity: 0.9;
-            animation: wag-tail 1s infinite;
-            cursor: pointer;
-        }
-
-        .alien-dog::before {
-            content: '';
-            position: absolute;
-            top: -30px;
-            left: 10px;
-            width: 40px;
-            height: 40px;
-            background: #000;
-            border-radius: 50% 40% 50% 40%;
-        }
-
-        .alien-dog::after {
-            content: '';
-            position: absolute;
-            right: -30px;
-            top: 10px;
-            width: 35px;
-            height: 15px;
-            background: #000;
-            border-radius: 0 50% 50% 0;
-            transform-origin: left;
-        }
-
-        @keyframes wag-tail {
-
-            0%,
-            100% {
-                transform: rotate(0deg);
-            }
-
-            50% {
-                transform: rotate(3deg);
-            }
-        }
-
-        /* Alien cat - Dr. Seuss style */
-        .alien-cat {
-            position: absolute;
-            bottom: 12%;
-            right: 25%;
-            width: 70px;
-            height: 50px;
-            background: #000;
-            border-radius: 60% 40% 40% 60%;
-            opacity: 0.9;
-            cursor: pointer;
-        }
-
-        .alien-cat::before {
-            content: '';
-            position: absolute;
-            top: -25px;
-            right: 15px;
-            width: 35px;
-            height: 35px;
-            background: #000;
-            border-radius: 40% 50% 40% 50%;
-        }
-
-        /* Cat ears */
-        .alien-cat::after {
-            content: '⌃⌃';
-            position: absolute;
-            top: -40px;
-            right: 10px;
-            color: #00ffff;
-            font-size: 20px;
-            letter-spacing: 5px;
+        .dj-site iframe {
+            width: 100%;
             height: 100%;
             border: none;
         }
@@ -453,49 +221,207 @@
             transform: scale(1.1);
         }
 
-        const star=document.createElement('div');
-        star.className='star';
-        star.style.left=Math.random() * 100+'%';
-        star.style.top=Math.random() * 60+'%';
-        star.style.animationDelay=Math.random() * 3+'s';
-        star.style.width=(Math.random() * 2 + 1)+'px';
-        star.style.height=star.style.width;
-        starsContainer.appendChild(star);
+        /* Easter Eggs */
+        .ufo {
+            position: absolute;
+            top: 15%;
+            left: -100px;
+            width: 60px;
+            height: 30px;
+            background: linear-gradient(180deg, silver 0%, #999 100%);
+            border-radius: 50%;
+            animation: fly-across 20s linear infinite;
+            cursor: pointer;
+            transition: transform 0.3s;
+            opacity: 0.7;
+        }
+
+        .ufo:hover {
+            transform: scale(1.5) rotate(15deg);
+            opacity: 1;
+        }
+
+        .ufo::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 15px;
+            background: #00ffff;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #00ffff;
+        }
+
+        @keyframes fly-across {
+            0% {
+                left: -100px;
+                top: 15%;
+            }
+
+            50% {
+                left: 50%;
+                top: 10%;
+            }
+
+            100% {
+                left: calc(100% + 100px);
+                top: 15%;
+            }
+        }
+
+        .easter-egg-counter {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            color: #00ff88;
+            font-size: 14px;
+            text-shadow: 0 0 10px #00ff88;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 2px solid #00ff88;
+        }
+
+        .secret-message {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ff00ff;
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.5s;
+            text-shadow: 0 0 20px #ff00ff;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 30px;
+            border-radius: 25px;
+            border: 2px solid #ff00ff;
+            z-index: 2000;
+        }
+
+        .secret-message.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Indicator -->
+    <div id="loader"
+        style="position:fixed; inset:0; background:black; z-index:2000; display:flex; align-items:center; justify-content:center; color:#00ff88; font-family:monospace; transition: opacity 0.5s;">
+        LOADING ALIEN LINK...
+    </div>
+
+    <!-- Living Room Scene -->
+    <div class="living-room" id="livingRoom">
+        <!-- Stars -->
+        <div class="stars" id="stars" style="opacity: 0.5;"></div>
+
+        <!-- UFO Easter Egg -->
+        <div class="ufo" onclick="ufoClick()" title="Click the UFO!" style="top: 10%;"></div>
+
+        <!-- TV in center -->
+        <div class="tv-container" onclick="enterTVMode()">
+            <div class="tv-body">
+                <div class="tv-screen">
+                    <div class="tv-glow"></div>
+                    <div class="play-button">
+                        <div class="play-icon"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="play-text">▶ PLAY</div>
+        </div>
+
+        <!-- Hidden Clickable Zones for Easter Eggs -->
+        <div onclick="dogClick()" title="Pet the dog"
+            style="position: absolute; bottom: 15%; left: 20%; width: 100px; height: 100px; cursor: pointer; z-index: 10;">
+        </div>
+        <div onclick="catClick()" title="Pet the cat"
+            style="position: absolute; bottom: 15%; right: 20%; width: 80px; height: 80px; cursor: pointer; z-index: 10;">
+        </div>
+        <div onclick="showSecret(eggMessages.snacks)" title="Steal a snack"
+            style="position: absolute; bottom: 25%; left: 50%; transform: translateX(-50%); width: 100px; height: 60px; cursor: pointer; z-index: 10;">
+        </div>
+    </div>
+
+    <!-- Video Intro -->
+    <div class="video-intro" id="videoIntro"
+        style="display: none; position: fixed; inset: 0; background: #000; z-index: 999; opacity: 0; pointer-events: none; transition: opacity 0.5s;">
+        <video id="introVideo" style="width: 100%; height: 100%; object-fit: cover;" preload="auto" playsinline>
+            <source src="https://raw.githubusercontent.com/jackspace/djjackspace/main/videos/alien-intro.mp4"
+                type="video/mp4">
+            Your browser does not support video playback.
+        </video>
+    </div>
+
+    <!-- Fullscreen DJ Site -->
+    <div class="dj-site" id="djSite">
+        <button class="back-button" onclick="exitTVMode()">← BACK TO LIVING ROOM</button>
+        <iframe src="main.html" title="DJ Jackspace - Galactic Grooves"></iframe>
+    </div>
+
+    <!-- Easter Egg Counter -->
+    <div class="easter-egg-counter" id="eggCounter">
+        🥚 Secrets: <span id="eggCount">0</span>/6
+    </div>
+
+    <!-- Secret Message -->
+    <div class="secret-message" id="secretMessage"></div>
+
+    <script>
+        // Remove loader when page loads
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 500);
+        });
+
+        // Generate stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 150; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 60 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            star.style.width = (Math.random() * 2 + 1) + 'px';
+            star.style.height = star.style.width;
+            starsContainer.appendChild(star);
         }
 
         // Easter Egg System
-        let easterEggsFound=new Set();
-
-        const eggMessages= {
+        let easterEggsFound = new Set();
+        const eggMessages = {
             ufo: "🛸 You found the UFO! Intergalactic traveler detected!",
-                dog: "🐕 Alien dog says: 'Woof woof beep boop!'",
-                cat: "🐱 Alien cat purrs in binary: 01101101 01100101 01101111 01110111",
-                konami: "🎮 KONAMI CODE! Old school gamer vibes!",
-                galactic: "🌟 GALACTIC MODE ACTIVATED! Press 'G' again to toggle!",
-                snacks: "🍿 Those alien snacks look delicious! 👽"
-        }
-
-        ;
+            dog: "🐕 Alien dog says: 'Woof woof beep boop!'",
+            cat: "🐱 Alien cat purrs in binary: 01101101 01100101 01101111 01110111",
+            konami: "🎮 KONAMI CODE! Old school gamer vibes!",
+            galactic: "🌟 GALACTIC MODE ACTIVATED! Press 'G' again to toggle!",
+            snacks: "🍿 Those alien snacks look delicious! 👽"
+        };
 
         function updateEggCounter() {
-            document.getElementById('eggCount').textContent=easterEggsFound.size;
-
-            if (easterEggsFound.size===6) {
+            document.getElementById('eggCount').textContent = easterEggsFound.size;
+            if (easterEggsFound.size === 6) {
                 showSecret("🎉 COSMIC MASTER! You found ALL secrets! You're ready for the universe! 🚀✨");
                 // Bonus: Rainbow mode
-                document.body.style.animation='rainbow 3s infinite';
+                document.body.style.animation = 'rainbow 3s infinite';
             }
         }
 
         function showSecret(message) {
-            const secretMsg=document.getElementById('secretMessage');
-            secretMsg.textContent=message;
+            const secretMsg = document.getElementById('secretMessage');
+            secretMsg.textContent = message;
             secretMsg.classList.add('show');
-            setTimeout(()=> secretMsg.classList.remove('show'), 4000);
+            setTimeout(() => secretMsg.classList.remove('show'), 4000);
         }
 
         function ufoClick() {
-            if ( !easterEggsFound.has('ufo')) {
+            if (!easterEggsFound.has('ufo')) {
                 easterEggsFound.add('ufo');
                 updateEggCounter();
                 showSecret(eggMessages.ufo);
@@ -503,7 +429,7 @@
         }
 
         function dogClick() {
-            if ( !easterEggsFound.has('dog')) {
+            if (!easterEggsFound.has('dog')) {
                 easterEggsFound.add('dog');
                 updateEggCounter();
                 showSecret(eggMessages.dog);
@@ -511,7 +437,7 @@
         }
 
         function catClick() {
-            if ( !easterEggsFound.has('cat')) {
+            if (!easterEggsFound.has('cat')) {
                 easterEggsFound.add('cat');
                 updateEggCounter();
                 showSecret(eggMessages.cat);
@@ -519,110 +445,101 @@
         }
 
         // Konami Code
-        let konamiCode=[];
-        const konamiSequence=['ArrowUp',
-        'ArrowUp',
-        'ArrowDown',
-        'ArrowDown',
-        'ArrowLeft',
-        'ArrowRight',
-        'ArrowLeft',
-        'ArrowRight',
-        'b',
-        'a'];
+        let konamiCode = [];
+        const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 
-        let galacticMode=false;
+        let galacticMode = false;
 
-        document.addEventListener('keydown', (e)=> {
-                konamiCode.push(e.key);
-                konamiCode=konamiCode.slice(-10);
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.key);
+            konamiCode = konamiCode.slice(-10);
 
-                if (konamiCode.join(',')===konamiSequence.join(',')) {
-                    if ( !easterEggsFound.has('konami')) {
-                        easterEggsFound.add('konami');
-                        updateEggCounter();
-                        showSecret(eggMessages.konami);
-                    }
+            if (konamiCode.join(',') === konamiSequence.join(',')) {
+                if (!easterEggsFound.has('konami')) {
+                    easterEggsFound.add('konami');
+                    updateEggCounter();
+                    showSecret(eggMessages.konami);
                 }
+            }
 
-                // Galactic mode toggle
-                if (e.key.toLowerCase()==='g') {
-                    if ( !easterEggsFound.has('galactic')) {
-                        easterEggsFound.add('galactic');
-                        updateEggCounter();
-                        showSecret(eggMessages.galactic);
-                    }
-
-                    galacticMode= !galacticMode;
-                    document.body.style.filter=galacticMode ? 'hue-rotate(120deg) saturate(1.5)' : 'none';
+            // Galactic mode toggle
+            if (e.key.toLowerCase() === 'g') {
+                if (!easterEggsFound.has('galactic')) {
+                    easterEggsFound.add('galactic');
+                    updateEggCounter();
+                    showSecret(eggMessages.galactic);
                 }
+                galacticMode = !galacticMode;
+                document.body.style.filter = galacticMode ? 'hue-rotate(120deg) saturate(1.5)' : 'none';
+            }
 
-                // Secret snacks click (press S)
-                if (e.key.toLowerCase()==='s') {
-                    if ( !easterEggsFound.has('snacks')) {
-                        easterEggsFound.add('snacks');
-                        updateEggCounter();
-                        showSecret(eggMessages.snacks);
-                    }
+            // Secret snacks click (press S)
+            if (e.key.toLowerCase() === 's') {
+                if (!easterEggsFound.has('snacks')) {
+                    easterEggsFound.add('snacks');
+                    updateEggCounter();
+                    showSecret(eggMessages.snacks);
                 }
-            });
+            }
+        });
 
         // TV Mode with Video Intro
         function enterTVMode() {
-            const videoIntro=document.getElementById('videoIntro');
-            const introVideo=document.getElementById('introVideo');
-            const livingRoom=document.getElementById('livingRoom');
-            const djSite=document.getElementById('djSite');
+            const videoIntro = document.getElementById('videoIntro');
+            const introVideo = document.getElementById('introVideo');
+            const livingRoom = document.getElementById('livingRoom');
+            const djSite = document.getElementById('djSite');
 
             // Show video intro
-            videoIntro.style.opacity='1';
-            videoIntro.style.pointerEvents='all';
+            videoIntro.style.display = 'block';
+            // Force reflow
+            videoIntro.offsetHeight;
+            videoIntro.style.opacity = '1';
+            videoIntro.style.pointerEvents = 'all';
 
             // Play the video
-            introVideo.play().catch(e=> {
-                    console.log('Video autoplay failed, going straight to site:', e);
-                    // If video fails, go straight to site
-                    videoIntro.style.opacity='0';
-                    videoIntro.style.pointerEvents='none';
-                    livingRoom.classList.add('tv-mode');
-                    djSite.classList.add('active');
-                });
-
-            // When video ends, transition to website
-            introVideo.onended=()=> {
-                videoIntro.style.opacity='0';
-                videoIntro.style.pointerEvents='none';
+            introVideo.play().catch(e => {
+                console.log('Video autoplay failed, going straight to site:', e);
+                // If video fails, go straight to site
+                videoIntro.style.opacity = '0';
+                videoIntro.style.pointerEvents = 'none';
+                setTimeout(() => videoIntro.style.display = 'none', 500);
                 livingRoom.classList.add('tv-mode');
                 djSite.classList.add('active');
-                introVideo.currentTime=0; // Reset for next time
-            }
+            });
 
-            ;
+            // When video ends, transition to website
+            introVideo.onended = () => {
+                videoIntro.style.opacity = '0';
+                videoIntro.style.pointerEvents = 'none';
+                setTimeout(() => videoIntro.style.display = 'none', 500);
+                livingRoom.classList.add('tv-mode');
+                djSite.classList.add('active');
+                introVideo.currentTime = 0; // Reset for next time
+            };
         }
 
         function exitTVMode() {
-            const introVideo=document.getElementById('introVideo');
+            const introVideo = document.getElementById('introVideo');
             introVideo.pause();
-            introVideo.currentTime=0;
-            document.getElementById('videoIntro').style.opacity='0';
-            document.getElementById('videoIntro').style.pointerEvents='none';
+            introVideo.currentTime = 0;
+            document.getElementById('videoIntro').style.opacity = '0';
+            document.getElementById('videoIntro').style.pointerEvents = 'none';
+            setTimeout(() => document.getElementById('videoIntro').style.display = 'none', 500);
             document.getElementById('livingRoom').classList.remove('tv-mode');
             document.getElementById('djSite').classList.remove('active');
         }
 
         // Add rainbow animation
-        const style=document.createElement('style');
-
-        style.textContent=` @keyframes rainbow {
-            0% {
-                filter: hue-rotate(0deg);
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes rainbow {
+                0% { filter: hue-rotate(0deg); }
+                100% { filter: hue-rotate(360deg); }
             }
-
-            100% {
-                filter: hue-rotate(360deg);
-            }
-        }
-
         `;
         document.head.appendChild(style);
-        </script></body></html>
+    </script>
+</body>
+
+</html>
