@@ -453,263 +453,176 @@
             transform: scale(1.1);
         }
 
-        /* Easter Eggs */
-        .ufo {
-            position: absolute;
-            top: 15%;
-            left: -100px;
-            width: 60px;
-            height: 30px;
-            background: linear-gradient(180deg, #silver 0%, #999 100%);
-            border-radius: 50%;
-            animation: fly-across 20s linear infinite;
-            cursor: pointer;
-            transition: transform 0.3s;
-            opacity: 0.7;
+        const star=document.createElement('div');
+        star.className='star';
+        star.style.left=Math.random() * 100+'%';
+        star.style.top=Math.random() * 60+'%';
+        star.style.animationDelay=Math.random() * 3+'s';
+        star.style.width=(Math.random() * 2 + 1)+'px';
+        star.style.height=star.style.width;
+        starsContainer.appendChild(star);
         }
 
-        .ufo:hover {
-            transform: scale(1.5) rotate(15deg);
-            opacity: 1;
+        // Easter Egg System
+        let easterEggsFound=new Set();
+
+        const eggMessages= {
+            ufo: "🛸 You found the UFO! Intergalactic traveler detected!",
+                dog: "🐕 Alien dog says: 'Woof woof beep boop!'",
+                cat: "🐱 Alien cat purrs in binary: 01101101 01100101 01101111 01110111",
+                konami: "🎮 KONAMI CODE! Old school gamer vibes!",
+                galactic: "🌟 GALACTIC MODE ACTIVATED! Press 'G' again to toggle!",
+                snacks: "🍿 Those alien snacks look delicious! 👽"
         }
 
-        .ufo::before {
-            content: '';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 15px;
-            background: #00ffff;
-            border-radius: 50%;
-            box-shadow: 0 0 20px #00ffff;
-        }
+        ;
 
-        @keyframes fly-across {
-            0% {
-                left: -100px;
-                top: 15%;
-            }
+        function updateEggCounter() {
+            document.getElementById('eggCount').textContent=easterEggsFound.size;
 
-            50% {
-                left: 50%;
-                top: 10%;
-            }
-
-            100% {
-                left: calc(100% + 100px);
-                top: 15%;
+            if (easterEggsFound.size===6) {
+                showSecret("🎉 COSMIC MASTER! You found ALL secrets! You're ready for the universe! 🚀✨");
+                // Bonus: Rainbow mode
+                document.body.style.animation='rainbow 3s infinite';
             }
         }
 
-        .easter-egg-counter {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            color: #00ff88;
-            font-size: 14px;
-            text-shadow: 0 0 10px #00ff88;
-            z-index: 100;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
-            border-radius: 20px;
-            border: 2px solid #00ff88;
+        function showSecret(message) {
+            const secretMsg=document.getElementById('secretMessage');
+            secretMsg.textContent=message;
+            secretMsg.classList.add('show');
+            setTimeout(()=> secretMsg.classList.remove('show'), 4000);
         }
 
-        .secret-message {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #ff00ff;
-            font-size: 16px;
-            opacity: 0;
-            transition: opacity 0.5s;
-            text-shadow: 0 0 20px #ff00ff;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 15px 30px;
-            border-radius: 25px;
-            border: 2px solid #ff00ff;
+        function ufoClick() {
+            if ( !easterEggsFound.has('ufo')) {
+                easterEggsFound.add('ufo');
+                updateEggCounter();
+                showSecret(eggMessages.ufo);
+            }
         }
 
-        .secret-message.show {
-            opacity: 1;
-
-            < !-- Secret Message --><div class="secret-message" id="secretMessage"></div><script> // Generate stars
-            const starsContainer=document.getElementById('stars');
-
-            for (let i=0; i < 150; i++) {
-                const star=document.createElement('div');
-                star.className='star';
-                star.style.left=Math.random() * 100+'%';
-                star.style.top=Math.random() * 60+'%';
-                star.style.animationDelay=Math.random() * 3+'s';
-                star.style.width=(Math.random() * 2 + 1)+'px';
-                star.style.height=star.style.width;
-                starsContainer.appendChild(star);
+        function dogClick() {
+            if ( !easterEggsFound.has('dog')) {
+                easterEggsFound.add('dog');
+                updateEggCounter();
+                showSecret(eggMessages.dog);
             }
+        }
 
-            // Easter Egg System
-            let easterEggsFound=new Set();
-
-            const eggMessages= {
-                ufo: "🛸 You found the UFO! Intergalactic traveler detected!",
-                    dog: "🐕 Alien dog says: 'Woof woof beep boop!'",
-                    cat: "🐱 Alien cat purrs in binary: 01101101 01100101 01101111 01110111",
-                    konami: "🎮 KONAMI CODE! Old school gamer vibes!",
-                    galactic: "🌟 GALACTIC MODE ACTIVATED! Press 'G' again to toggle!",
-                    snacks: "🍿 Those alien snacks look delicious! 👽"
+        function catClick() {
+            if ( !easterEggsFound.has('cat')) {
+                easterEggsFound.add('cat');
+                updateEggCounter();
+                showSecret(eggMessages.cat);
             }
+        }
 
-            ;
+        // Konami Code
+        let konamiCode=[];
+        const konamiSequence=['ArrowUp',
+        'ArrowUp',
+        'ArrowDown',
+        'ArrowDown',
+        'ArrowLeft',
+        'ArrowRight',
+        'ArrowLeft',
+        'ArrowRight',
+        'b',
+        'a'];
 
-            function updateEggCounter() {
-                document.getElementById('eggCount').textContent=easterEggsFound.size;
+        let galacticMode=false;
 
-                if (easterEggsFound.size===6) {
-                    showSecret("🎉 COSMIC MASTER! You found ALL secrets! You're ready for the universe! 🚀✨");
-                    // Bonus: Rainbow mode
-                    document.body.style.animation='rainbow 3s infinite';
+        document.addEventListener('keydown', (e)=> {
+                konamiCode.push(e.key);
+                konamiCode=konamiCode.slice(-10);
+
+                if (konamiCode.join(',')===konamiSequence.join(',')) {
+                    if ( !easterEggsFound.has('konami')) {
+                        easterEggsFound.add('konami');
+                        updateEggCounter();
+                        showSecret(eggMessages.konami);
+                    }
                 }
-            }
 
-            function showSecret(message) {
-                const secretMsg=document.getElementById('secretMessage');
-                secretMsg.textContent=message;
-                secretMsg.classList.add('show');
-                setTimeout(()=> secretMsg.classList.remove('show'), 4000);
-            }
-
-            function ufoClick() {
-                if ( !easterEggsFound.has('ufo')) {
-                    easterEggsFound.add('ufo');
-                    updateEggCounter();
-                    showSecret(eggMessages.ufo);
-                }
-            }
-
-            function dogClick() {
-                if ( !easterEggsFound.has('dog')) {
-                    easterEggsFound.add('dog');
-                    updateEggCounter();
-                    showSecret(eggMessages.dog);
-                }
-            }
-
-            function catClick() {
-                if ( !easterEggsFound.has('cat')) {
-                    easterEggsFound.add('cat');
-                    updateEggCounter();
-                    showSecret(eggMessages.cat);
-                }
-            }
-
-            // Konami Code
-            let konamiCode=[];
-            const konamiSequence=['ArrowUp',
-            'ArrowUp',
-            'ArrowDown',
-            'ArrowDown',
-            'ArrowLeft',
-            'ArrowRight',
-            'ArrowLeft',
-            'ArrowRight',
-            'b',
-            'a'];
-
-            let galacticMode=false;
-
-            document.addEventListener('keydown', (e)=> {
-                    konamiCode.push(e.key);
-                    konamiCode=konamiCode.slice(-10);
-
-                    if (konamiCode.join(',')===konamiSequence.join(',')) {
-                        if ( !easterEggsFound.has('konami')) {
-                            easterEggsFound.add('konami');
-                            updateEggCounter();
-                            showSecret(eggMessages.konami);
-                        }
+                // Galactic mode toggle
+                if (e.key.toLowerCase()==='g') {
+                    if ( !easterEggsFound.has('galactic')) {
+                        easterEggsFound.add('galactic');
+                        updateEggCounter();
+                        showSecret(eggMessages.galactic);
                     }
 
-                    // Galactic mode toggle
-                    if (e.key.toLowerCase()==='g') {
-                        if ( !easterEggsFound.has('galactic')) {
-                            easterEggsFound.add('galactic');
-                            updateEggCounter();
-                            showSecret(eggMessages.galactic);
-                        }
+                    galacticMode= !galacticMode;
+                    document.body.style.filter=galacticMode ? 'hue-rotate(120deg) saturate(1.5)' : 'none';
+                }
 
-                        galacticMode= !galacticMode;
-                        document.body.style.filter=galacticMode ? 'hue-rotate(120deg) saturate(1.5)' : 'none';
+                // Secret snacks click (press S)
+                if (e.key.toLowerCase()==='s') {
+                    if ( !easterEggsFound.has('snacks')) {
+                        easterEggsFound.add('snacks');
+                        updateEggCounter();
+                        showSecret(eggMessages.snacks);
                     }
+                }
+            });
 
-                    // Secret snacks click (press S)
-                    if (e.key.toLowerCase()==='s') {
-                        if ( !easterEggsFound.has('snacks')) {
-                            easterEggsFound.add('snacks');
-                            updateEggCounter();
-                            showSecret(eggMessages.snacks);
-                        }
-                    }
-                });
+        // TV Mode with Video Intro
+        function enterTVMode() {
+            const videoIntro=document.getElementById('videoIntro');
+            const introVideo=document.getElementById('introVideo');
+            const livingRoom=document.getElementById('livingRoom');
+            const djSite=document.getElementById('djSite');
 
-            // TV Mode with Video Intro
-            function enterTVMode() {
-                const videoIntro=document.getElementById('videoIntro');
-                const introVideo=document.getElementById('introVideo');
-                const livingRoom=document.getElementById('livingRoom');
-                const djSite=document.getElementById('djSite');
+            // Show video intro
+            videoIntro.style.opacity='1';
+            videoIntro.style.pointerEvents='all';
 
-                // Show video intro
-                videoIntro.style.opacity='1';
-                videoIntro.style.pointerEvents='all';
-
-                // Play the video
-                introVideo.play().catch(e=> {
-                        console.log('Video autoplay failed, going straight to site:', e);
-                        // If video fails, go straight to site
-                        videoIntro.style.opacity='0';
-                        videoIntro.style.pointerEvents='none';
-                        livingRoom.classList.add('tv-mode');
-                        djSite.classList.add('active');
-                    });
-
-                // When video ends, transition to website
-                introVideo.onended=()=> {
+            // Play the video
+            introVideo.play().catch(e=> {
+                    console.log('Video autoplay failed, going straight to site:', e);
+                    // If video fails, go straight to site
                     videoIntro.style.opacity='0';
                     videoIntro.style.pointerEvents='none';
                     livingRoom.classList.add('tv-mode');
                     djSite.classList.add('active');
-                    introVideo.currentTime=0; // Reset for next time
-                }
+                });
 
-                ;
+            // When video ends, transition to website
+            introVideo.onended=()=> {
+                videoIntro.style.opacity='0';
+                videoIntro.style.pointerEvents='none';
+                livingRoom.classList.add('tv-mode');
+                djSite.classList.add('active');
+                introVideo.currentTime=0; // Reset for next time
             }
 
-            function exitTVMode() {
-                const introVideo=document.getElementById('introVideo');
-                introVideo.pause();
-                introVideo.currentTime=0;
-                document.getElementById('videoIntro').style.opacity='0';
-                document.getElementById('videoIntro').style.pointerEvents='none';
-                document.getElementById('livingRoom').classList.remove('tv-mode');
-                document.getElementById('djSite').classList.remove('active');
+            ;
+        }
+
+        function exitTVMode() {
+            const introVideo=document.getElementById('introVideo');
+            introVideo.pause();
+            introVideo.currentTime=0;
+            document.getElementById('videoIntro').style.opacity='0';
+            document.getElementById('videoIntro').style.pointerEvents='none';
+            document.getElementById('livingRoom').classList.remove('tv-mode');
+            document.getElementById('djSite').classList.remove('active');
+        }
+
+        // Add rainbow animation
+        const style=document.createElement('style');
+
+        style.textContent=` @keyframes rainbow {
+            0% {
+                filter: hue-rotate(0deg);
             }
 
-            // Add rainbow animation
-            const style=document.createElement('style');
-
-            style.textContent=` @keyframes rainbow {
-                0% {
-                    filter: hue-rotate(0deg);
-                }
-
-                100% {
-                    filter: hue-rotate(360deg);
-                }
+            100% {
+                filter: hue-rotate(360deg);
             }
+        }
 
-            `;
-            document.head.appendChild(style);
-            </script></body></html>
+        `;
+        document.head.appendChild(style);
+        </script></body></html>
