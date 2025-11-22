@@ -397,9 +397,9 @@
                             <li><i class="fas fa-check text-neon-cyan mr-2"></i>Up to 6 hidden easter eggs</li>
                             <li><i class="fas fa-check text-neon-cyan mr-2"></i>Perfect for creative artists</li>
                         </ul>
-                        <a href="mailto:djjackspace@gmail.com?subject=Purchase%20Alien%20Living%20Room%20Theme"
+                        <a href="javascript:void(0)" onclick="openThemeModal('alien')"
                             class="btn-neon-cyan w-full text-center block hover:scale-105 transition-transform">
-                            <i class="fas fa-shopping-cart mr-2"></i>Buy Now
+                            <i class="fas fa-info-circle mr-2"></i>More Information
                         </a>
                     </div>
                 </div>
@@ -424,9 +424,9 @@
                             <li><i class="fas fa-check text-neon-purple mr-2"></i>Up to 7 hidden easter eggs</li>
                             <li><i class="fas fa-check text-neon-purple mr-2"></i>For tech-savvy producers</li>
                         </ul>
-                        <a href="mailto:djjackspace@gmail.com?subject=Purchase%20Retro%20Terminal%20Theme"
+                        <a href="javascript:void(0)" onclick="openThemeModal('retro')"
                             class="btn-neon w-full text-center block hover:scale-105 transition-transform">
-                            <i class="fas fa-shopping-cart mr-2"></i>Buy Now
+                            <i class="fas fa-info-circle mr-2"></i>More Information
                         </a>
                     </div>
                 </div>
@@ -451,9 +451,9 @@
                             <li><i class="fas fa-check text-neon-cyan mr-2"></i>Premium sound integration</li>
                             <li><i class="fas fa-check text-neon-cyan mr-2"></i>The ultimate showcase</li>
                         </ul>
-                        <a href="mailto:djjackspace@gmail.com?subject=Purchase%20Lake%20Chapala%20Theme"
+                        <a href="javascript:void(0)" onclick="openThemeModal('lake')"
                             class="btn-neon-cyan w-full text-center block hover:scale-105 transition-transform">
-                            <i class="fas fa-shopping-cart mr-2"></i>Buy Now
+                            <i class="fas fa-info-circle mr-2"></i>More Information
                         </a>
                     </div>
                 </div>
@@ -518,39 +518,219 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-12 bg-cosmic-navy border-t border-white/5">
-        <div class="section-container">
-            <div class="text-center space-y-6">
-                <!-- Logo -->
-                <div>
-                    <a href="#"
-                        class="text-3xl font-display font-bold neon-text hover:scale-105 inline-block transition-transform">
-                        JACKSPACE
-                    </a>
+    <!-- Theme Details Modal -->
+    <div id="themeModal" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300"
+        aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onclick="closeThemeModal()"></div>
+
+        <!-- Modal Panel -->
+        <div class="relative z-10 flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+            <div
+                class="relative transform overflow-hidden rounded-2xl glass-dark text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl border border-neon-purple/30">
+
+                <!-- Close Button -->
+                <button onclick="closeThemeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white z-20">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+
+                <!-- Modal Content -->
+                <div class="px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start flex-col">
+
+                        <!-- Hero Image -->
+                        <div class="w-full h-48 rounded-xl overflow-hidden mb-6 relative">
+                            <img id="modalImage" src="" alt="Theme Preview" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                            <h3 id="modalTitle"
+                                class="absolute bottom-4 left-4 text-2xl font-bold text-white font-display shadow-black drop-shadow-lg">
+                            </h3>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="w-full text-left">
+                            <p id="modalDescription" class="text-gray-300 mb-6 text-sm leading-relaxed"></p>
+
+                            <!-- Features List -->
+                            <h4 class="text-neon-cyan font-bold mb-3 text-sm uppercase tracking-wider">Key Features</h4>
+                            <ul id="modalFeatures"
+                                class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8 text-sm text-gray-400">
+                                <!-- Populated by JS -->
+                            </ul>
+
+                            <!-- Pricing Tiers -->
+                            <h4 class="text-neon-purple font-bold mb-3 text-sm uppercase tracking-wider">Pricing Tiers
+                            </h4>
+                            <div class="grid grid-cols-3 gap-4 mb-8 text-center">
+                                <div class="p-3 rounded-lg bg-white/5 border border-white/10">
+                                    <div class="text-xs text-gray-400 mb-1">Basic</div>
+                                    <div class="text-lg font-bold text-white">$50</div>
+                                </div>
+                                <div
+                                    class="p-3 rounded-lg bg-white/5 border border-neon-cyan/30 relative overflow-hidden">
+                                    <div class="absolute top-0 right-0 w-2 h-2 bg-neon-cyan rounded-full m-1"></div>
+                                    <div class="text-xs text-neon-cyan mb-1">Pro</div>
+                                    <div class="text-lg font-bold text-white">$100</div>
+                                </div>
+                                <div
+                                    class="p-3 rounded-lg bg-white/5 border border-neon-purple/30 relative overflow-hidden">
+                                    <div class="absolute top-0 right-0 w-2 h-2 bg-neon-purple rounded-full m-1"></div>
+                                    <div class="text-xs text-neon-purple mb-1">Premium</div>
+                                    <div class="text-lg font-bold text-white">$150</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Quick Links -->
-                <nav class="flex justify-center gap-6 flex-wrap text-sm">
-                    <a href="#about" class="text-gray-400 hover:text-neon-purple transition-colors">About</a>
-                    <a href="#mixcloud" class="text-gray-400 hover:text-neon-cyan transition-colors">Shows</a>
-                    <a href="#software" class="text-gray-400 hover:text-neon-purple transition-colors">Software</a>
-                    <a href="#themes" class="text-gray-400 hover:text-neon-cyan transition-colors">Themes</a>
-                    <a href="#connect" class="text-gray-400 hover:text-neon-purple transition-colors">Connect</a>
-                </nav>
-
-                <!-- Copyright -->
-                <div class="text-gray-500 text-sm">
-                    <p>&copy; 2025 DJ Jackspace. All rights reserved.</p>
-                    <p class="mt-2 text-xs">
-                        Galactic grooves from San Francisco & Lake Chapala 🌌
-                    </p>
+                <!-- Modal Actions -->
+                <div class="bg-black/20 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6 gap-3">
+                    <a id="modalBuyLink" href="#"
+                        class="btn-neon-cyan inline-flex w-full justify-center sm:w-auto text-sm">
+                        <i class="fas fa-envelope mr-2"></i>Inquire to Buy
+                    </a>
+                    <button type="button" onclick="closeThemeModal()"
+                        class="mt-3 inline-flex w-full justify-center rounded-full bg-white/10 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-white/20 sm:mt-0 sm:w-auto border border-white/10 transition-all">
+                        Close
+                    </button>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black border-t border-white/10">
+        <div class="section-container text-center">
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="https://www.instagram.com/jackspaceSF/" target="_blank"
+                    class="text-2xl text-gray-400 hover:text-neon-purple transition-colors"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.mixcloud.com/jackspaceSF/" target="_blank"
+                    class="text-2xl text-gray-400 hover:text-neon-cyan transition-colors"><i
+                        class="fab fa-mixcloud"></i></a>
+                <a href="https://soundcloud.com/jackspace" target="_blank"
+                    class="text-2xl text-gray-400 hover:text-neon-purple transition-colors"><i
+                        class="fab fa-soundcloud"></i></a>
+                <a href="mailto:djjackspace@gmail.com"
+                    class="text-2xl text-gray-400 hover:text-neon-cyan transition-colors"><i
+                        class="fas fa-envelope"></i></a>
+            </div>
+            <p class="text-gray-500">
+                &copy; 2025 DJ Jackspace. All rights reserved. <br>
+                <span class="text-xs opacity-50">Made with 👽 alien technology</span>
+            </p>
+        </div>
     </footer>
 
-    <!-- Main JavaScript -->
+    <script>
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger once on load
+
+        // Theme Data
+        const themes = {
+            alien: {
+                title: "Alien Living Room",
+                image: "/images/theme-alien.png",
+                description: "A whimsical, Dr. Seuss-inspired silhouette theme featuring a cozy alien living room. Perfect for artists who want to show a fun, creative side.",
+                features: [
+                    "Interactive Alien Pets (Dog & Cat)",
+                    "Cozy Animated Fireplace & Atmosphere",
+                    "6 Hidden Easter Eggs to Engage Fans",
+                    "Fully Mobile Responsive Design",
+                    "Custom 'TV Mode' Video Player",
+                    "Neon Color Palette"
+                ]
+            },
+            retro: {
+                title: "Retro Terminal (C64)",
+                image: "/images/theme-retro.png",
+                description: "A nostalgic trip back to the 80s with this fully interactive Commodore 64 style terminal. Ideal for tech-savvy producers and synthwave artists.",
+                features: [
+                    "Authentic CRT Scanlines & Glow Effects",
+                    "Typeable Command Line Interface",
+                    "7 Hidden Secrets & Mini-Games",
+                    "Retro Green/Amber Monochrome Mode",
+                    "Boot Sequence Animation",
+                    "Matrix-style Code Rain Background"
+                ]
+            },
+            lake: {
+                title: "Lake Chapala Night",
+                image: "/images/theme-lake.png",
+                description: "The ultimate premium experience. A photorealistic night scene by the lake with stunning particle effects and a premium, high-end feel.",
+                features: [
+                    "Photorealistic Parallax Background",
+                    "Advanced Particle Systems (Fireflies, Stars)",
+                    "Premium Glassmorphism UI Elements",
+                    "Cinematic Intro Sequence",
+                    "High-Fidelity Audio Visualizer",
+                    "Exclusive 'Sunset' Color Grading"
+                ]
+            }
+        };
+
+        // Modal Functions
+        function openThemeModal(themeId) {
+            const modal = document.getElementById('themeModal');
+            const data = themes[themeId];
+
+            if (!data) return;
+
+            // Populate Data
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalImage').src = data.image;
+            document.getElementById('modalDescription').textContent = data.description;
+
+            // Populate Features
+            const featuresList = document.getElementById('modalFeatures');
+            featuresList.innerHTML = data.features.map(f =>
+                `<li class="flex items-center"><i class="fas fa-check text-neon-cyan mr-2 text-xs"></i>${f}</li>`
+            ).join('');
+
+            // Update Buy Link
+            const subject = encodeURIComponent(`Purchase ${data.title} Theme`);
+            document.getElementById('modalBuyLink').href = `mailto:djjackspace@gmail.com?subject=${subject}`;
+
+            // Show Modal
+            modal.classList.remove('hidden');
+            // Small delay to allow display:block to apply before opacity transition
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('.transform').classList.add('scale-100');
+                modal.querySelector('.transform').classList.remove('scale-95');
+            }, 10);
+        }
+
+        function closeThemeModal() {
+            const modal = document.getElementById('themeModal');
+            modal.classList.add('opacity-0');
+            modal.querySelector('.transform').classList.remove('scale-100');
+            modal.querySelector('.transform').classList.add('scale-95');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function (event) {
+            if (event.key === "Escape") {
+                closeThemeModal();
+            }
+        });
+    </script>
 </body>
 
 </html>
